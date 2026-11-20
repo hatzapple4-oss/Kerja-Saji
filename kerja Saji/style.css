@@ -1,0 +1,86 @@
+:root{
+  --kuah:#d9931b; --cabai:#2aadff; --kunyit:#f2b431; --nasi:#f7f8f5; --arang:#1f2321; --abu:#6b726f; --garis:#d9ddd8; --putih:#fff;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--nasi);color:var(--arang);line-height:1.55}
+h1,h2,h3,.brand{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;background:var(--kuah);color:var(--putih)}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:.2px;flex:1;text-align:center}
+.ghost{background:none;border:1px solid rgba(255,255,255,.5);color:var(--putih);border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;min-width:72px}
+.ghost[hidden]{display:block;visibility:hidden}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+.view[hidden]{display:none}
+h1{font-size:clamp(1.9rem,6vw,2.6rem);font-weight:800;color:var(--kuah);margin:16px 0 10px}
+h2{font-size:1.4rem;margin:8px 0 14px;color:var(--kuah)}
+.lead{color:var(--abu);margin-bottom:20px}
+.roles{display:grid;gap:12px}
+.role{text-align:left;font:inherit;padding:18px;border:2px solid var(--kuah);border-radius:14px;background:var(--putih);cursor:pointer;display:grid;gap:4px}
+.role b{font-size:1.1rem;color:var(--kuah)}
+.role span{color:var(--abu)}
+.role:hover{background:var(--kuah)}
+.role:hover b,.role:hover span{color:var(--putih)}
+form{display:grid;gap:14px}
+label{display:grid;gap:5px;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;padding:11px 12px;border:1px solid var(--garis);border-radius:10px;background:var(--putih)}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:3px solid var(--kunyit);outline-offset:1px}
+.grp{display:grid;gap:14px}
+.primary{font:inherit;font-weight:700;background:var(--cabai);color:var(--putih);border:0;border-radius:10px;padding:13px 18px;cursor:pointer}
+.primary:hover{filter:brightness(.92)}
+.primary.alt{background:var(--kuah)}
+.profile{background:var(--kuah);color:var(--putih);border-radius:14px;padding:18px;margin-bottom:22px}
+.profile h3{font-size:1.3rem;margin-bottom:4px}
+.profile p{opacity:.9;font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{background:var(--kunyit);color:var(--arang);font-size:.8rem;font-weight:700;border-radius:99px;padding:3px 10px}
+.jobs{display:grid;gap:12px}
+.job{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;background:var(--putih);border:1px solid var(--garis);border-radius:14px;padding:14px;text-align:left;font:inherit;cursor:pointer;width:100%}
+.job:hover{border-color:var(--cabai)}
+.mark{width:52px;height:52px;border-radius:12px;background:var(--kunyit);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem}
+.job b{display:block;font-size:1.05rem}
+.job small{color:var(--abu)}
+.box{background:var(--putih);border:1px solid var(--garis);border-radius:14px;padding:16px;margin:14px 0}
+.box h3{font-size:1.05rem;margin-bottom:6px}
+.box ul{padding-left:18px}
+.meta{color:var(--abu);margin-bottom:6px}
+.pel{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--garis)}
+.pel:first-of-type{border-top:0}
+.pel small{display:block;color:var(--abu)}
+.pel button{font:inherit;border:1px solid var(--kuah);color:var(--kuah);background:none;border-radius:8px;padding:6px 12px;cursor:pointer}
+.msgs{display:flex;flex-direction:column;gap:8px;min-height:50vh;max-height:60vh;overflow-y:auto;padding:14px;background:var(--putih);border:1px solid var(--garis);border-radius:14px}
+.m{max-width:80%;padding:9px 13px;border-radius:14px;background:#e9ece8;align-self:flex-start}
+.m.me{background:var(--kuah);color:var(--putih);align-self:flex-end}
+.chatform{grid-template-columns:1fr auto;margin-top:12px}
+@media (prefers-reduced-motion:no-preference){.view{animation:in .25s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+
+/* Foto */
+.fotoin{display:flex;align-items:center;gap:14px}
+.fotoin label{flex:1}
+.ava{flex:none;width:52px;height:52px;border-radius:50%;background:var(--kunyit) center/cover no-repeat;color:var(--arang);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.3rem;overflow:hidden}
+.ava.big{width:84px;height:84px;font-size:1.8rem;border:2px dashed var(--kuah)}
+.prof-row{display:flex;gap:14px;align-items:center}
+.prof-row .ava{border:2px solid var(--putih)}
+.thumb{width:72px;height:72px;border-radius:12px;background-size:cover;background-position:center}
+.job{grid-template-columns:72px 1fr}
+.banner{height:180px;border-radius:14px;background-size:cover;background-position:center;margin-bottom:14px}
+
+/* Tentang tempat kerja */
+.tempat p{margin:10px 0}
+.info{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;margin:10px 0}
+.info dt{color:var(--abu)}
+.info dd{margin:0}
+.link{color:var(--cabai);font-weight:700}
+.tempat .tags{margin:8px 0 12px}
+
+/* Edit lowongan */
+.kosong{border-style:dashed;color:var(--abu)}
+.danger{font:inherit;background:none;border:1px solid var(--cabai);color:var(--cabai);border-radius:10px;padding:11px 18px;cursor:pointer}
+.danger[hidden]{display:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.kosongmsg{padding:20px;border:1px dashed var(--garis);border-radius:14px;color:var(--abu)}
+
+/* Filter wilayah dan edit */
+.filter{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.filter button{grid-column:1/-1}
+.tag.warn{background:var(--cabai);color:var(--putih)}
+.empty{text-align:center;color:var(--abu);margin:auto}
+.btn-edit{margin-bottom:6px;width:100%}

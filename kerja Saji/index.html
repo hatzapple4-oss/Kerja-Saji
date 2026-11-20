@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerja Saji – Lowongan Kerja F&B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <button id="btnBack" class="ghost" hidden>Kembali</button>
+  <span class="brand">Kerja Saji</span>
+  <button id="btnOut" class="ghost" hidden>Keluar</button>
+</header>
+
+<main>
+  <!-- 1. Pilih peran -->
+  <section id="v-start" class="view">
+    <h1>Kerja di dapur, kafe, dan warung yang cocok untukmu.</h1>
+    <p class="lead">Pilih peranmu untuk mulai.</p>
+    <div class="roles">
+      <button class="role" data-role="pelamar"><b>Saya pelamar</b><span>Buat CV singkat dan lamar lowongan F&B.</span></button>
+      <button class="role" data-role="perusahaan"><b>Saya pemilik usaha</b><span>Tampilkan profil usaha dan pantau pelamar.</span></button>
+    </div>
+  </section>
+
+  <!-- 2. Isi data pengguna -->
+  <section id="v-form" class="view" hidden>
+    <h2 id="formTitle"></h2>
+    <form id="form" autocomplete="off">
+      <div class="fotoin">
+        <div id="fotoPrev" class="ava big">+</div>
+        <label><span id="fotoLabel">Foto profil</span><input type="file" id="foto" accept="image/*"></label>
+      </div>
+      <div class="grp g-pelamar">
+        <label>Nama lengkap<input name="nama" required></label>
+        <label>Domisili (wilayah)<select name="wilayah" class="selW"></select></label>
+        <label>Nomor WhatsApp<input name="kontak" inputmode="tel" required></label>
+        <label>Pendidikan terakhir
+          <select name="pendidikan"><option>SMA/SMK</option><option>D3</option><option>S1</option><option>Lainnya</option></select>
+        </label>
+        <label>Pengalaman kerja<textarea name="pengalaman" rows="3" placeholder="Contoh: 1 tahun barista di Kafe Alun-alun"></textarea></label>
+        <label>Keahlian<input name="keahlian" placeholder="Latte art, kasir, memasak"></label>
+      </div>
+      <div class="grp g-perusahaan">
+        <label>Nama usaha<input name="usaha" required></label>
+        <label>Jenis usaha
+          <select name="jenis"><option>Kafe</option><option>Restoran</option><option>Warung makan</option><option>Katering</option><option>Toko roti</option></select>
+        </label>
+        <label>Wilayah usaha<select name="wilayah" class="selW"></select></label>
+        <label>Alamat lengkap<input name="alamat" required></label>
+        <label>Jam operasional<input name="jam" placeholder="08.00–22.00"></label>
+        <label>Fasilitas karyawan<input name="fasilitas" placeholder="Makan siang, seragam, bonus"></label>
+        <label>Jumlah karyawan<input name="karyawan" type="number" min="1" value="5"></label>
+        <label>Tentang usaha<textarea name="tentang" rows="3"></textarea></label>
+        <label>Kontak HRD<input name="kontak"></label>
+      </div>
+      <button class="primary" type="submit">Simpan dan lanjut</button>
+    </form>
+  </section>
+
+  <!-- 3. Beranda -->
+  <section id="v-home" class="view" hidden>
+    <div id="profile" class="profile"></div>
+    <h2 id="homeTitle"></h2>
+    <div id="filter" class="filter" hidden>
+      <label>Wilayahmu<select id="fWil" class="selW"></select></label>
+      <label>Jarak<select id="fRad"><option value="0">Semua jarak</option><option value="25">≤ 25 km</option><option value="50">≤ 50 km</option><option value="100">≤ 100 km</option></select></label>
+      <button type="button" class="primary alt" id="btnGps">Gunakan lokasi saya</button>
+    </div>
+    <p id="homeNote" class="meta"></p>
+    <div id="jobs" class="jobs"></div>
+  </section>
+
+  <!-- 4. Keterangan loker -->
+  <section id="v-detail" class="view" hidden></section>
+
+  <!-- Edit lowongan (pemilik usaha) -->
+  <section id="v-edit" class="view" hidden>
+    <h2>Edit lowongan</h2>
+    <p class="meta">Isi dengan data yang benar. Lowongan baru tampil ke pelamar setelah semua kolom terisi.</p>
+    <form id="editForm">
+      <label>Nama posisi<input name="judul" required></label>
+      <label>Jenis dan jam kerja<input name="tipe" placeholder="Penuh waktu, shift pagi" required></label>
+      <label>Gaji<input name="gaji" placeholder="Rp3.000.000 per bulan" required></label>
+      <label>Jobdesk (satu tugas per baris)<textarea name="tugas" rows="4" required></textarea></label>
+      <label>Persyaratan (satu syarat per baris)<textarea name="syarat" rows="4" required></textarea></label>
+      <button class="primary" type="submit">Simpan lowongan</button>
+    </form>
+  </section>
+
+  <!-- 5. Chat -->
+  <section id="v-chat" class="view" hidden>
+    <h2 id="chatTitle"></h2>
+    <div id="msgs" class="msgs" aria-live="polite"></div>
+    <form id="chatForm" class="chatform">
+      <input id="chatInput" placeholder="Tulis pesan" required>
+      <button class="primary" type="submit">Kirim</button>
+    </form>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
